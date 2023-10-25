@@ -2,9 +2,10 @@
 
 ## Description
 
-This is a "Work day scheduler", the 5th challenge/homework for UC Berkley coding boot camp. 
-- The name of this challenge "WDth_Scheduler5" simply reflect my work day scheduler :D
-- This project helped me to learn more about how jQuery works in JavaScript, how to do dynamic programming and how localstorage works.
+Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. 
+- The challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+- This is the sixth assignment for the bootcamp coding class.
+- This project helped me to learn more about Third-party API, Server-side API, Client-side API, and how to do dynamic programming.
  
 ## Installation
 
@@ -13,9 +14,9 @@ To run the application successfully, we need Microsoft Visual Studio as an edito
 ## Task 
 
 -	HTML and CSS is used to design the interface.
--	A starter code is being given and we mostly worked on the JavaScript part.
--	This homework emphasized the importance of using JavaScript web APIs to make dynamic changes to an HTML document.
--	Different event listeners and functions were implemented for user convenience.
+-	No starter code was given, so had to start from the scratch.
+-	This homework emphasized the importance of using JavaScript APIs to make dynamic changes to an HTML document.
+-	This was a very hard assignment for me, which helped me to learn more about JS.
 
 ## Usage
 
@@ -44,37 +45,35 @@ I used a lot of git commands like :
 ## Credits
 
 Apart from me :D the credit also goes to my Instructor, TAs, Tutor, Classmates, and 
-- Google (my guide everytime I got stuck and lost!)
+- Google Search
 - Geeks for Geeks
+- Chrome Dev Tools
 - Stack Overflow
 - MDN web doc
 - Github docs
 - Tutorials Teacher
+- w3schools
 
 ## User Story
 
 ```
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
+AS A traveler
+I WANT to see the weather outlook for multiple cities
+SO THAT I can plan a trip accordingly
 ```
 
 ## Acceptance Criteria
 
 ```
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with time blocks for standard business hours of 9am to 5pm
-WHEN I view the time blocks for that day
-THEN each time block is color-coded to indicate whether it is in the past, present, or future
-WHEN I click into a time block
-THEN I can enter an event
-WHEN I click the save button for that time block
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
+GIVEN a weather dashboard with form inputs
+WHEN I search for a city
+THEN I am presented with current and future conditions for that city and that city is added to the search history
+WHEN I view current weather conditions for that city
+THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the the wind speed
+WHEN I view future weather conditions for that city
+THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
+WHEN I click on a city in the search history
+THEN I am again presented with current and future conditions for that city
 
 ```
 ## License
