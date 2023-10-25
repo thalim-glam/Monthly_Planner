@@ -27,6 +27,7 @@ body{
   padding: 40px 35px;
   text-align: center;
 }
+/* Searching area */
 .search{
   width: 100%;
   display: flex;
@@ -44,4 +45,17 @@ body{
   flex: 1;
   margin-right: 15px;
   font-size: 18px;
+}
+.search button{
+  border: 0;
+  outline: 0;
+  background: #ebfffc ;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+.search button img{
+  width: 20px;
+  justify-content: center;
 }
