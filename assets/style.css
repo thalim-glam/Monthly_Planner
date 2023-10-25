@@ -1,0 +1,35 @@
+/* CSS for all HTML elements */
+*{
+  margin: 0;
+  padding: 0;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  box-sizing: border-box;
+}
+h1{
+  margin: 50px auto 0;
+  text-align: center;
+}
+h3{
+  text-align: center;
+  text-decoration:underline;
+}
+body{
+  background-color: rgba(169, 160, 155, 0.444);
+}
+/* Container showing Current temp, himidity, wind speed */
+.card{
+  width: 90%;
+  max-width: 500px;
+  background:linear-gradient(135deg,#00a5fea7, #f7850292);
+  color: #ffff;
+  margin: 100px auto 0;
+  border-radius: 20px;
+  padding: 40px 35px;
+  text-align: center;
+}
+.search{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
