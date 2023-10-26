@@ -1,5 +1,6 @@
 // HW6 api = b5b9d37f78c385c862bf221f6302bf82
 const apiKey = "df3fb9934a7d8ebae97c6749b588071a"
+//const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=${apiKey}";
 const searchInput = document.querySelector("#searchInput")
 const todaysWeather = document.querySelector("#weather")
 
