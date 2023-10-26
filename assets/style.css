@@ -27,6 +27,10 @@ body{
   padding: 40px 35px;
   text-align: center;
 }
+.card-group5{
+  display: inline;
+}
+
 /* Searching area */
 .search{
   width: 100%;
