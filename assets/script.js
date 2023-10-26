@@ -15,7 +15,8 @@ async function searchWeather(cityName) {
       document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°F";
       document.querySelector(".humidity").innerHTML = Math.floor(data.main.humidity) + " %";
       document.querySelector(".wind").innerHTML = Math.ceil(data.wind.speed) + " km/h";
-      /*
+
+      //---------------------------------------------------------------------------------------------------------------     
 
       var lat = data.coord.lat;
       var lon = data.coord.lon;
@@ -25,28 +26,32 @@ async function searchWeather(cityName) {
         .then(function (response) {
           return response.json()
         }).then(function (data5) {
-          console.log(data5)
-          const todayData5 = `
-          <div>
-          <h2>${data5.city.name}</h2>
-          <p>Temp: ${data5.main.temp}</p>
-          <p>Humidity: ${data5.main.humidity}</p>
-          <p>Wind speed: ${data5.wind.speed}</p>
-          </div>
-          `
-            todaysWeather.innerHTML = todayData5;
+          console.log(data5);
 
+          for (i = 1; i < 40; i = i + 8) {
+            //document.querySelector(".city").innerHTML = data.name;
+           // document.querySelector(".temp").innerHTML = Math.round(data5.list[i].main.temp) + "°F";
+           // document.querySelector(".humidity").innerHTML = Math.floor(data5.list[i].main.humidity) + " %";
+           // document.querySelector(".wind").innerHTML = Math.ceil(data5.list[i].wind.speed) + " km/h";
+           console.log(data5.city.name)           //city name
+           console.log(data5.list[i].dt_txt)      //date
+           console.log(data5.list[i].main.temp)  //temp
+           console.log(data5.list[i].main.humidity) //humidity
+           console.log(data5.list[i].wind.speed) //wind-speed
 
+          }
         })
-        */
 
-        })
-    }
+
+      //--------------------------------------------------------------------------------------------------------------
+    })
+}
 
 
 const searchButton = document.querySelector("#searchBtn")
-  searchButton.addEventListener("click", function (event) {
-    event.preventDefault()
-    const cityName = searchInput.value.trim()
-    searchWeather(cityName)
-  })
+searchButton.addEventListener("click", function (event) {
+  event.preventDefault()
+  const cityName = searchInput.value.trim()
+  searchWeather(cityName)
+})
+
