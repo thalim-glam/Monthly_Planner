@@ -20,7 +20,7 @@ To run the application successfully, we need Microsoft Visual Studio as an edito
 
 ## Usage
 
-To see my homework, please go to : https://thalim-glam.github.io/WDth_Scheduler5/
+To see my homework, please go to : https://thalim-glam.github.io/Myweather_Dashboard/
 
 Here are the sample screenshots
 - Screenshot : Demo of expectation
@@ -44,7 +44,7 @@ I used a lot of git commands like :
 
 ## Credits
 
-Apart from me :D the credit also goes to my Instructor, TAs, Tutor, Classmates, and 
+Apart from me :D the credit also goes to my Instructor, sub instructor, Tutor,  and 
 - Google Search
 - Geeks for Geeks
 - Chrome Dev Tools
