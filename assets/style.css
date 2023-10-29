@@ -13,6 +13,19 @@ h3{
   text-align: center;
   text-decoration:underline;
 }
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.left, .right {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 body{
   background-color: rgba(169, 160, 155, 0.444);
@@ -54,6 +67,7 @@ max-width: 420px;
   border-radius: 30px;
   flex: 1;
   margin-right: 15px;
+  margin-top: 40px;
   font-size: 18px;
 }
 .search button{
@@ -64,6 +78,7 @@ max-width: 420px;
   width: 60px;
   height: 60px;
   cursor: pointer;
+  margin-top: 40px;
 }
 .search button img{
   width: 20px;
