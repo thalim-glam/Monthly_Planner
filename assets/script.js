@@ -1,6 +1,6 @@
 // HW6 api = b5b9d37f78c385c862bf221f6302bf82
-const apiKey = "df3fb9934a7d8ebae97c6749b588071a"
 //const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=${apiKey}";
+const apiKey = "df3fb9934a7d8ebae97c6749b588071a"
 const searchInput = document.querySelector("#searchInput")
 const todaysWeather = document.querySelector("#weather")
 
@@ -16,8 +16,6 @@ async function searchWeather(cityName) {
       document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°F";
       document.querySelector(".humidity").innerHTML = Math.floor(data.main.humidity) + " %";
       document.querySelector(".wind").innerHTML = Math.ceil(data.wind.speed) + " km/h";
-
-      //--------------------------------- var currDate =  new Date(fiveDayArray[i].dt_txt).toLocaleString().split(',')[0]; ------------------------------------------------------------------------------     
 
       const d = new Date();
       const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -35,7 +33,6 @@ async function searchWeather(cityName) {
 
       var lat = data.coord.lat;
       var lon = data.coord.lon;
-      // fetch to this next end point https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}
 
       fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`)
         .then(function (response) {
@@ -81,7 +78,6 @@ async function searchWeather(cityName) {
             // console.log(data5.list[i].main.temp)  //temp
             // console.log(data5.list[i].main.humidity) //humidity
             // console.log(data5.list[i].wind.speed) //wind-speed
-
           }
         })
       //-------- 5 days card ends here --------
@@ -92,11 +88,96 @@ async function searchWeather(cityName) {
   }
 }
 
-//-----------------------------------------------------------------------------------------------
-const searchButton = document.querySelector("#searchBtn")
+//----------------------------------This is the Search button -------------------------------------------------------------
+const searchButton = document.querySelector("#submit-score")
 searchButton.addEventListener("click", function (event) {
   event.preventDefault()
   const cityName = searchInput.value.trim()
   searchWeather(cityName)
 })
 
+//---------------------------- This part will show recently searched places --------------------------------------
+
+var containerHighScoresEl = document.getElementById("high-score-container");
+var ViewHighScoreEl = document.getElementById("high-score");
+var listHighScoreEl = document.getElementById("high-score-list");
+var btnClearScoresEl = document.querySelector("#clear-high-score");
+var HighScores = [];
+
+//------------------------------------------------------------------------------------------------
+var createHighScore = function (event) {
+  event.preventDefault();
+  var initial = document.querySelector("#initial").value;
+  if (!initial) {
+    alert("Ooopsss ! You forgot to Enter your intial !");
+    //return;
+  }
+
+  //var HighScores = [];
+  var currentScore = {
+    initial: initial,
+    score: score
+  }
+
+  formInitials.reset();
+
+  /*------------------------ Pushing value to the HighScore array-------------*/
+  HighScores.push(currentScore);
+  HighScores.sort((a, b) => { return b.score - a.score });
+
+  /*--------------------------- clear visibile list -----------------------*/
+  while (listHighScoreEl.firstChild) {
+    listHighScoreEl.removeChild(listHighScoreEl.firstChild)
+  }
+
+  /*----------------------- Creating List element ---------------------------*/
+  for (var i = 0; i < HighScores.length; i++) {
+    var highscoreEl = document.createElement("li");
+    highscoreEl.ClassName = "high-score";
+    highscoreEl.innerHTML = HighScores[i].initial + " : " + HighScores[i].score;
+    listHighScoreEl.appendChild(highscoreEl);
+  }
+  saveHighScore();
+  displayHighScores();
+}
+
+var saveHighScore = function () {
+  localStorage.setItem("HighScores", JSON.stringify(HighScores))
+}
+
+/* ----------------------------- load values/ called on page load ------------------*/
+var loadHighScore = function () {
+  var LoadedHighScores = localStorage.getItem("HighScores")
+  if (!LoadedHighScores) {
+    return false;
+  }
+
+  LoadedHighScores = JSON.parse(LoadedHighScores);
+  LoadedHighScores.sort((a, b) => { return b.score - a.score })
+
+  for (var i = 0; i < LoadedHighScores.length; i++) {
+    var highscoreEl = document.createElement("li");
+    highscoreEl.ClassName = "score-list";
+    //-------------------------------------
+    highscoreEl.innerText = LoadedHighScores[i].initial + " : " + LoadedHighScores[i].score;
+    listHighScoreEl.appendChild(highscoreEl);
+
+    HighScores.push(LoadedHighScores[i]);
+  }
+}
+/* ------------------- tHIS IS CLEAR SEARCH --------------------------- */
+var clearScores = function () {
+  HighScores = [];
+
+  while (listHighScoreEl.firstChild) {
+    listHighScoreEl.removeChild(listHighScoreEl.firstChild);
+  }
+
+  localStorage.clear(HighScores);
+
+}
+
+loadHighScore();
+
+btnClearScoresEl.addEventListener("click", clearScores);                   //BUTTON Clear Score
+ViewHighScoreEl.addEventListener("click", displayHighScores);              //bUTTON High Score

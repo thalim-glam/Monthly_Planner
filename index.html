@@ -15,38 +15,52 @@
   <h3>:: Done by Tasneem Halim ::</h3>
 
   <div class="container">
+    <!----------------------- This the Upper left container ------------------>
     <div class="left">
       <div class="search">
-        <input type="text" placeholder="enter city name" spellcheck="false" id="searchInput">
-        <button id="searchBtn"><img src="./images/search.png"></button>
+        <form id="initial-form" class="initial">
+          <input type="text" placeholder="enter city name" spellcheck="false" id="searchInput">
+          <!-------  <input type="text" name="initial" id="initial" class="text-input" /> -------->
+          <button class="start-btn" id="submit-score" type="submit"><img src="./images/search.png"></button>
+        </form>
+      </div>
+
+      <div id="high-score-container" class="hide">
+        <div class="high-score-container">
+          <h1 class="high-score">Recently Searched places</h1>
+          <ol id="high-score-list" class="score-list"></ol>
+          <button id="clear-high-score"> Clear Search History </button>
+        </div>
       </div>
     </div>
+
+    <!----------------------- This the Upper right container ------------------>
     <div class="right">
-    <div class="card">
-      <div class="weather">
-        <h3 id="day"> Today's Weather </h3>
-        <img src="./images/clear.png" class="weather-icon">
-        <h1 class="temp">67°F</h1>
-        <h2 class="city"> Los Cabos </h2>
-        <div class="details">
-          <div class="col">
-            <img src="./images/humidity.png" alt="himidity">
-            <div>
-              <p>Current Humidity</p>
-              <p class="humidity">50%</p>
+      <div class="card">
+        <div class="weather">
+          <h3 id="day"> Today's Weather </h3>
+          <img src="./images/clear.png" class="weather-icon">
+          <h1 class="temp">67°F</h1>
+          <h2 class="city"> Los Cabos </h2>
+          <div class="details">
+            <div class="col">
+              <img src="./images/humidity.png" alt="himidity">
+              <div>
+                <p>Current Humidity</p>
+                <p class="humidity">50%</p>
+              </div>
             </div>
-          </div>
-          <div class="col">
-            <img src="./images/wind.png" alt="wind">
-            <div>
-              <p>Wind Speed</p>
-              <p class="wind">15 MPH </p>
+            <div class="col">
+              <img src="./images/wind.png" alt="wind">
+              <div>
+                <p>Wind Speed</p>
+                <p class="wind">15 MPH </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
   </div>
 
