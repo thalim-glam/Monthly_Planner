@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Traveller's Weather App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="./assets/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -15,38 +17,49 @@
   <h3>:: Done by Tasneem Halim ::</h3>
 
   <div class="container">
+    <!----------------------- This the Upper left container ------------------>
     <div class="left">
       <div class="search">
-        <input type="text" placeholder="enter city name" spellcheck="false" id="searchInput">
-        <button id="searchBtn"><img src="./images/search.png"></button>
+        <form id="initial-form" class="initial">
+          <input type="text" placeholder="enter city name" spellcheck="false" class="text-input" id="searchInput">
+          <button class="start-btn" id="submit-score" type="submit"><img src="./images/search.png"></button>
+        </form>
       </div>
+
+      <div style="border:1px solid green; margin-top: 20px; width:400px; height:300px; overflow-y:auto;">
+        <h3>Recent Search :</h3>
+        <ul id="searchHistory"></ul>
+      </div>
+
     </div>
+
+    <!----------------------- This the Upper right container ------------------>
     <div class="right">
-    <div class="card">
-      <div class="weather">
-        <h3 id="day"> Today's Weather </h3>
-        <img src="./images/clear.png" class="weather-icon">
-        <h1 class="temp">67°F</h1>
-        <h2 class="city"> Los Cabos </h2>
-        <div class="details">
-          <div class="col">
-            <img src="./images/humidity.png" alt="himidity">
-            <div>
-              <p>Current Humidity</p>
-              <p class="humidity">50%</p>
+      <div class="card">
+        <div class="weather">
+          <h3 id="day"> Today's Weather </h3>
+          <img src="./images/clear.png" class="weather-icon">
+          <h1 class="temp">67°F</h1>
+          <h2 class="city"> Los Cabos </h2>
+          <div class="details">
+            <div class="col">
+              <img src="./images/humidity.png" alt="himidity">
+              <div>
+                <p>Current Humidity</p>
+                <p class="humidity">50%</p>
+              </div>
             </div>
-          </div>
-          <div class="col">
-            <img src="./images/wind.png" alt="wind">
-            <div>
-              <p>Wind Speed</p>
-              <p class="wind">15 MPH </p>
+            <div class="col">
+              <img src="./images/wind.png" alt="wind">
+              <div>
+                <p>Wind Speed</p>
+                <p class="wind">15 MPH </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
   </div>
 

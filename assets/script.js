@@ -1,6 +1,6 @@
 // HW6 api = b5b9d37f78c385c862bf221f6302bf82
-const apiKey = "df3fb9934a7d8ebae97c6749b588071a"
 //const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=${apiKey}";
+const apiKey = "df3fb9934a7d8ebae97c6749b588071a"
 const searchInput = document.querySelector("#searchInput")
 const todaysWeather = document.querySelector("#weather")
 
@@ -16,8 +16,6 @@ async function searchWeather(cityName) {
       document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°F";
       document.querySelector(".humidity").innerHTML = Math.floor(data.main.humidity) + " %";
       document.querySelector(".wind").innerHTML = Math.ceil(data.wind.speed) + " km/h";
-
-      //--------------------------------- var currDate =  new Date(fiveDayArray[i].dt_txt).toLocaleString().split(',')[0]; ------------------------------------------------------------------------------     
 
       const d = new Date();
       const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -35,7 +33,6 @@ async function searchWeather(cityName) {
 
       var lat = data.coord.lat;
       var lon = data.coord.lon;
-      // fetch to this next end point https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}
 
       fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`)
         .then(function (response) {
@@ -81,7 +78,6 @@ async function searchWeather(cityName) {
             // console.log(data5.list[i].main.temp)  //temp
             // console.log(data5.list[i].main.humidity) //humidity
             // console.log(data5.list[i].wind.speed) //wind-speed
-
           }
         })
       //-------- 5 days card ends here --------
@@ -92,11 +88,33 @@ async function searchWeather(cityName) {
   }
 }
 
-//-----------------------------------------------------------------------------------------------
-const searchButton = document.querySelector("#searchBtn")
+//----------------------------------This is the Search button -------------------------------------------------------------
+const searchButton = document.querySelector("#submit-score")
 searchButton.addEventListener("click", function (event) {
   event.preventDefault()
   const cityName = searchInput.value.trim()
   searchWeather(cityName)
 })
 
+//---------------------------- This part will show recently searched places --------------------------------------
+
+var recentSearches = []; // create an empty javascript array
+var searchEl = document.getElementById("#search");
+//this function is called using the search buttons "onclick"
+function searchFunction(searchEl) {
+    
+    recentSearches.push($('#textboxSearch').val()); // This line puts the value from the text box in an array
+    $('#textboxSearch').val(""); //  clear the text box after search
+    $('#searchHistory').text(""); //clear the seach history window then repopulate with the new array
+    
+    // the function below loops through the array and adds each item in the array
+    // to the span element within the Search history arear
+    $.each(recentSearches, function (index, value) {
+        $('#searchHistory').append("<li class='historyItem'  onclick='addtotextbox("+index+")'>" + value + '</li>');
+    });
+}
+
+function addtotextbox(id)
+{
+$('#textboxSearch').val(recentSearches[id]);
+}

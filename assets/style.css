@@ -61,7 +61,7 @@ max-width: 420px;
   border: 0;
   outline: 0;
   background: #ebfffc;
-  color: #28272755;
+  color: #090909ad;
   padding: 10px 25px;
   height: 60px;
   border-radius: 30px;
@@ -122,4 +122,42 @@ p{
 .humidity, .wind{
   font-size: 28px;
   margin-top: -6px;
+}
+
+.high-score-container {
+  padding: 0;
+  margin: auto;
+  display: inline-block;
+}
+.high-score {
+  padding: auto;
+  margin-top: 20px;
+  margin-left: -150px;
+  font-size: 1.5rem;
+  display:inline-block;
+}
+
+ol {
+  padding-left: 60px;
+  margin: auto;
+  font-size: 1.1rem;
+  display: flex;
+  list-style-type: number;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+li:nth-child(odd) {
+  background-color: #cdfff7);
+}
+
+li {
+  font-size: 3.0vw;
+  display:list-item;
+}
+#clear-high-score{
+  margin: 5px;
+  padding: 10px 20px;
+  color: rgb(0, 0, 0);
+  padding-right: 18px;
 }
