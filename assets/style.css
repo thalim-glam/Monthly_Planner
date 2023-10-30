@@ -1,18 +1,21 @@
 /* CSS for all HTML elements */
-*{
+* {
   margin: 0;
   padding: 0;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   box-sizing: border-box;
 }
-h1{
+
+h1 {
   margin: 50px auto 0;
   text-align: center;
 }
-h3{
+
+h3 {
   text-align: center;
   text-decoration: underline;
 }
+
 .container {
   display: flex;
   flex-direction: row;
@@ -20,7 +23,8 @@ h3{
   flex-wrap: wrap;
 }
 
-.left, .right {
+.left,
+.right {
   flex: 1;
   padding: 20px;
   display: flex;
@@ -28,49 +32,53 @@ h3{
   align-items: center;
 }
 
-body{
+body {
   background-color: rgba(169, 160, 155, 0.444);
 }
+
 /* Container showing Current temp, himidity, wind speed */
-.card{
+.card {
   width: 90%;
   max-width: 500px;
-  background:linear-gradient(135deg,#00a5febe, #f7330270);
+  background: linear-gradient(135deg, #00a5febe, #f7330270);
   color: #ffff;
   margin: 50px auto 0;
   border-radius: 20px;
   padding: 40px 35px;
   text-align: center;
 }
-.weather{
-max-width: 420px;
+
+.weather {
+  max-width: 420px;
 }
 
-.pastCity{
-  text-align:left;
+.pastCity {
+  text-align: left;
   font-size: 20px;
 }
 
-.card-group5{
+.card-group5 {
   display: flex;
   padding: .25rem;
   gap: 0.25rem;
   flex-wrap: wrap;
 }
-.week{
+
+.week {
   max-width: 15rem;
   min-width: 5rem;
   padding: .25rem;
 }
 
 /* Searching area */
-.search{
+.search {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.search input{
+
+.search input {
   border: 0;
   outline: 0;
   background: #ebfffc;
@@ -83,40 +91,47 @@ max-width: 420px;
   margin-top: 40px;
   font-size: 18px;
 }
-.search button{
+
+.search button {
   border: 0;
   outline: 0;
-  background: #ebfffc ;
+  background: #ebfffc;
   border-radius: 50%;
   width: 60px;
   height: 60px;
   cursor: pointer;
   margin-top: 40px;
 }
-.search button img{
+
+.search button img {
   width: 20px;
   justify-content: center;
 }
+
 /* Himiduty and Wind speed */
-.weather-icon{
+.weather-icon {
   width: 170px;
   margin-top: 30px;
   margin-left: 50px;
 }
-.weather h1{
+
+.weather h1 {
   font-size: 80px;
   font-weight: 400;
 }
-.weather h2{
+
+.weather h2 {
   font-size: 40px;
   font-weight: 400;
   margin-top: -10px;
 }
-p{
+
+p {
   margin-top: 0;
   margin-bottom: 0;
 }
-.details{
+
+.details {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -124,16 +139,20 @@ p{
   margin-top: 50px;
   flex-wrap: wrap;
 }
-.col{
+
+.col {
   display: flex;
   align-items: center;
   text-align: left;
 }
-.col img{
+
+.col img {
   width: 60px;
   margin-right: 10px;
 }
-.humidity, .wind{
+
+.humidity,
+.wind {
   font-size: 28px;
   margin-top: -6px;
 }
@@ -143,12 +162,13 @@ p{
   margin: auto;
   display: inline-block;
 }
+
 .high-score {
   padding: auto;
   margin-top: 20px;
   margin-left: -150px;
   font-size: 1.5rem;
-  display:inline-block;
+  display: inline-block;
 }
 
 ol {
@@ -167,9 +187,10 @@ li:nth-child(odd) {
 
 li {
   font-size: 3.0vw;
-  display:list-item;
+  display: list-item;
 }
-#clear-high-score{
+
+#clear-high-score {
   margin: 5px;
   padding: 10px 20px;
   color: rgb(0, 0, 0);
