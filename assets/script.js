@@ -95,7 +95,7 @@ searchButton.addEventListener("click", function (event) {
 })
 
 //---------------------------- This part will show recently searched places --------------------------------------
-function saveSearchs(){
+function saveSearchs() {
   var recentSearch = document.getElementById("searchInput").value;
   var recentSearches = JSON.parse(localStorage.getItem("recentSearches")) || []
   recentSearches.push(recentSearch)
@@ -103,20 +103,20 @@ function saveSearchs(){
   addtotextbox(recentSearches);
 }
 
-function addtotextbox(recentSearches)
-{
-var historyContainer = document.querySelector("#searchHistory")
-recentSearches.forEach(search => {
-  var listCity = document.createElement("li")
-  listCity.textContent = search
-  listCity.className += "pastCity"
-  historyContainer.appendChild(listCity)
-  listCity.addEventListener("click", function(event){
-    event.preventDefault();
-    var pastSearch = listCity.textContent;
-    searchWeather(pastSearch);
-  })
-});
+function addtotextbox(recentSearches) {
+  localStorage.clear();
+  var historyContainer = document.querySelector("#searchHistory")
+  recentSearches.forEach(search => {
+    var listCity = document.createElement("li")
+    listCity.textContent = search
+    listCity.className += "pastCity"
+    historyContainer.appendChild(listCity)
+    listCity.addEventListener("click", function (event) {
+      event.preventDefault();
+      var pastSearch = listCity.textContent;
+      searchWeather(pastSearch);
+    })
+  });
 }
 
 
@@ -169,6 +169,6 @@ recentSearches.forEach(search => {
 
 
 
- //document.getElementById("img" +(i+1)).src=" https://openweathermap.org/img/wn/" + data5.list[i].weather[0].icon +".png"  
+//document.getElementById("img" +(i+1)).src=" https://openweathermap.org/img/wn/" + data5.list[i].weather[0].icon +".png"
 //const iconCode = weatherData.current.weather[0].icon;
 //const iconUrl = `https://openweathermap.org/img/w/${iconCode}.png`;
