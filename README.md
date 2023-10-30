@@ -2,10 +2,11 @@
 
 ## Description
 
-Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. 
+Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. 
 - The challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
-- This is the sixth assignment for the bootcamp coding class.
+- This is the sixth challenge for the bootcamp coding class.
 - This project helped me to learn more about Third-party API, Server-side API, Client-side API, and how to do dynamic programming.
+- I did not use any framework to finish this assignment. So everything was raw-coding
  
 ## Installation
 
@@ -16,7 +17,7 @@ To run the application successfully, we need Microsoft Visual Studio as an edito
 -	HTML and CSS is used to design the interface.
 -	No starter code was given, so had to start from the scratch.
 -	This homework emphasized the importance of using JavaScript APIs to make dynamic changes to an HTML document.
--	This was a very hard assignment for me, which helped me to learn more about JS.
+-	This was kind of hard assignment for me, which helped me to learn more about how APis and JQuery work.
 
 ## Usage
 
@@ -89,25 +90,12 @@ MIT Lisence
 ## Features
 
 In my code I had 1 main branch and crated a few featured branch to test my code and update.
-  - I worked on the basic starter code provided from the bootcamp.
-  - Added the javaScript code to make it work.
-  - Used inspect to monitor my code and it's performance.
+
 
 ## Summery
-- This is a single day eight hour planner created by using HMTL, CSS and JS concept.
-- The text filed represents tasks of the day which are manually added to the local storage.
-- jQuery concept from JavaScript is used to get and set values from/to the local storage.
-- A clear function was used to clear all the tasks.
-- The header contains the local date and time that updates continuously.
-- Day.js function was used for time calculation and formatting conversion at the top of the page.
-- Color representation inclued: RED (for present hour), GRAY (for past hour) and GREEN (for future hour)
-
-## How to Test
-
-To test the homework, 
-  - Please follow the deployed website link. 
-  - Click the "Clear Field" button to reset schedule.
-  - You can test the application different ways.
-  - You can check the "Inspect -> Applications" to see the saved values.
+- This is a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+- When a city name is searched, the top card will show current weather condition including temperature, humiditi and wind speed.
+- Below the next 5 days forcast of the searched cities. and the box below the search section will show the recently searched places. 
+- This project helped me to learn more about Third-party API, Server-side API, Client-side API, and how to do dynamic programming.
 
 ### Done By: Tasneem Halim

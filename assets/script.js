@@ -98,86 +98,23 @@ searchButton.addEventListener("click", function (event) {
 
 //---------------------------- This part will show recently searched places --------------------------------------
 
-var containerHighScoresEl = document.getElementById("high-score-container");
-var ViewHighScoreEl = document.getElementById("high-score");
-var listHighScoreEl = document.getElementById("high-score-list");
-var btnClearScoresEl = document.querySelector("#clear-high-score");
-var HighScores = [];
-
-//------------------------------------------------------------------------------------------------
-var createHighScore = function (event) {
-  event.preventDefault();
-  var initial = document.querySelector("#initial").value;
-  if (!initial) {
-    alert("Ooopsss ! You forgot to Enter your intial !");
-    //return;
-  }
-
-  //var HighScores = [];
-  var currentScore = {
-    initial: initial,
-    score: score
-  }
-
-  formInitials.reset();
-
-  /*------------------------ Pushing value to the HighScore array-------------*/
-  HighScores.push(currentScore);
-  HighScores.sort((a, b) => { return b.score - a.score });
-
-  /*--------------------------- clear visibile list -----------------------*/
-  while (listHighScoreEl.firstChild) {
-    listHighScoreEl.removeChild(listHighScoreEl.firstChild)
-  }
-
-  /*----------------------- Creating List element ---------------------------*/
-  for (var i = 0; i < HighScores.length; i++) {
-    var highscoreEl = document.createElement("li");
-    highscoreEl.ClassName = "high-score";
-    highscoreEl.innerHTML = HighScores[i].initial + " : " + HighScores[i].score;
-    listHighScoreEl.appendChild(highscoreEl);
-  }
-  saveHighScore();
-  displayHighScores();
+var recentSearches = []; // create an empty javascript array
+var searchEl = document.getElementById("#search");
+//this function is called using the search buttons "onclick"
+function searchFunction(searchEl) {
+    
+    recentSearches.push($('#textboxSearch').val()); // This line puts the value from the text box in an array
+    $('#textboxSearch').val(""); //  clear the text box after search
+    $('#searchHistory').text(""); //clear the seach history window then repopulate with the new array
+    
+    // the function below loops through the array and adds each item in the array
+    // to the span element within the Search history arear
+    $.each(recentSearches, function (index, value) {
+        $('#searchHistory').append("<li class='historyItem'  onclick='addtotextbox("+index+")'>" + value + '</li>');
+    });
 }
 
-var saveHighScore = function () {
-  localStorage.setItem("HighScores", JSON.stringify(HighScores))
+function addtotextbox(id)
+{
+$('#textboxSearch').val(recentSearches[id]);
 }
-
-/* ----------------------------- load values/ called on page load ------------------*/
-var loadHighScore = function () {
-  var LoadedHighScores = localStorage.getItem("HighScores")
-  if (!LoadedHighScores) {
-    return false;
-  }
-
-  LoadedHighScores = JSON.parse(LoadedHighScores);
-  LoadedHighScores.sort((a, b) => { return b.score - a.score })
-
-  for (var i = 0; i < LoadedHighScores.length; i++) {
-    var highscoreEl = document.createElement("li");
-    highscoreEl.ClassName = "score-list";
-    //-------------------------------------
-    highscoreEl.innerText = LoadedHighScores[i].initial + " : " + LoadedHighScores[i].score;
-    listHighScoreEl.appendChild(highscoreEl);
-
-    HighScores.push(LoadedHighScores[i]);
-  }
-}
-/* ------------------- tHIS IS CLEAR SEARCH --------------------------- */
-var clearScores = function () {
-  HighScores = [];
-
-  while (listHighScoreEl.firstChild) {
-    listHighScoreEl.removeChild(listHighScoreEl.firstChild);
-  }
-
-  localStorage.clear(HighScores);
-
-}
-
-loadHighScore();
-
-btnClearScoresEl.addEventListener("click", clearScores);                   //BUTTON Clear Score
-ViewHighScoreEl.addEventListener("click", displayHighScores);              //bUTTON High Score
