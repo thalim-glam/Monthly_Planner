@@ -21,14 +21,14 @@
     <div class="left">
       <div class="search">
         <form id="initial-form" class="initial">
-          <input type="text" placeholder="enter city name" spellcheck="false" class="text-input" id="searchInput">
+          <input type="text" placeholder="city name" spellcheck="false" class="text-input" id="searchInput">
           <button class="start-btn" id="submit-score" type="submit"><img src="./images/search.png"></button>
         </form>
       </div>
 
       <div style="border:1px solid green; margin-top: 20px; width:400px; height:300px; overflow-y:auto;">
         <h3>Recent Search :</h3>
-        <ul id="searchHistory"></ul>
+        <ul class="searchHistory" id="searchHistory"></ul>
       </div>
 
     </div>
@@ -68,7 +68,7 @@
 
   <!-- 6666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666-->
   <div class="card-group5">
-    <div class="weather card">
+    <div class="week card">
       <!--  <img src="https://openweathermap.org/img/wn/" id ="img1">-->
       <h3 id="day1"></h3>
       <p class="date1"></p>
@@ -92,10 +92,10 @@
         </div>
       </div>
     </div>
-    <div class="weather card">
+    <div class="week card">
       <h3 id="day2"></h3>
       <p class="date2"></p>
-      <img src="./images/drizzle.png" class="weather-icon">
+      <img src="./images/clouds.png" class="weather-icon">
       <h1 class="temp2">0°F</h1>
       <h2 class="city2"> Portland </h2>
       <div class="details">
@@ -115,10 +115,10 @@
         </div>
       </div>
     </div>
-    <div class="weather card">
+    <div class="week card">
       <h3 id="day3"></h3>
       <p class="date3"></p>
-      <img src="./images/mist.png" class="weather-icon">
+      <img src="./images/clouds.png" class="weather-icon">
       <h1 class="temp3">0°F</h1>
       <h2 class="city3"> Portland </h2>
       <div class="details">
@@ -138,10 +138,10 @@
         </div>
       </div>
     </div>
-    <div class="weather card">
+    <div class="week card">
       <h3 id="day4"></h3>
       <p class="date4"></p>
-      <img src="./images/rain.png" class="weather-icon">
+      <img src="./images/clouds.png" class="weather-icon">
       <h1 class="temp4">0°F</h1>
       <h2 class="city4"> Portland </h2>
       <div class="details">
@@ -161,7 +161,7 @@
         </div>
       </div>
     </div>
-    <div class="weather card">
+    <div class="week card">
       <h3 id="day5"></h3>
       <p class="date5"></p>
       <img src="./images/clouds.png" class="weather-icon">
@@ -184,10 +184,7 @@
         </div>
       </div>
     </div>
-
-    <section id="weather">
-
-    </section>
+</div>
     <script src="./assets/script.js"></script>
 </body>
 
