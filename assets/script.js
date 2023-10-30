@@ -11,7 +11,6 @@ async function searchWeather(cityName) {
       return response.json()
     }).then(function (data) {
       console.log(data)
-      //  document.querySelector(".day").innerHTML = data.dt_txt.toLocaleString();
       document.querySelector(".city").innerHTML = data.name;
       document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°F";
       document.querySelector(".humidity").innerHTML = Math.floor(data.main.humidity) + " %";
@@ -42,7 +41,7 @@ async function searchWeather(cityName) {
 
           for (i = 0; i < 40; i = i + 8) {
             if (i === 0) {
-              //document.getElementById("img" +(i+1)).src=" https://openweathermap.org/img/wn/" + data5.list[i].weather[0].icon +".png"   
+ 
               document.querySelector(".date1").innerHTML = (data5.list[i].dt_txt).split(" ")[0];
               document.querySelector(".city1").innerHTML = data5.city.name;
               document.querySelector(".temp1").innerHTML = Math.round(data5.list[i].main.temp) + "°F";
@@ -82,10 +81,7 @@ async function searchWeather(cityName) {
         })
       //-------- 5 days card ends here --------
     })
-    .catch(err)
-  {
-    alert("Something went wrong");
-  }
+
 }
 
 //----------------------------------This is the Search button -------------------------------------------------------------
@@ -93,28 +89,35 @@ const searchButton = document.querySelector("#submit-score")
 searchButton.addEventListener("click", function (event) {
   event.preventDefault()
   const cityName = searchInput.value.trim()
+  saveSearchs();
   searchWeather(cityName)
 })
 
 //---------------------------- This part will show recently searched places --------------------------------------
-
-var recentSearches = []; // create an empty javascript array
-var searchEl = document.getElementById("#search");
-//this function is called using the search buttons "onclick"
-function searchFunction(searchEl) {
-    
-    recentSearches.push($('#textboxSearch').val()); // This line puts the value from the text box in an array
-    $('#textboxSearch').val(""); //  clear the text box after search
-    $('#searchHistory').text(""); //clear the seach history window then repopulate with the new array
-    
-    // the function below loops through the array and adds each item in the array
-    // to the span element within the Search history arear
-    $.each(recentSearches, function (index, value) {
-        $('#searchHistory').append("<li class='historyItem'  onclick='addtotextbox("+index+")'>" + value + '</li>');
-    });
+function saveSearchs(){
+  var recentSearch = document.getElementById("searchInput").value;
+  var recentSearches = JSON.parse(localStorage.getItem("recentSearches")) || []
+  recentSearches.push(recentSearch)
+  localStorage.setItem("recentSearches", JSON.stringify(recentSearches))
+  addtotextbox(recentSearches);
 }
 
-function addtotextbox(id)
+function addtotextbox(recentSearches)
 {
-$('#textboxSearch').val(recentSearches[id]);
+var historyContainer = document.querySelector("#searchHistory")
+recentSearches.forEach(search => {
+  var listCity = document.createElement("li")
+  listCity.textContent = search
+  listCity.className += "pastCity"
+  historyContainer.appendChild(listCity)
+  listCity.addEventListener("click", function(event){
+    event.preventDefault();
+    var pastSearch = listCity.textContent;
+    searchWeather(pastSearch);
+  })
+});
 }
+
+ //document.getElementById("img" +(i+1)).src=" https://openweathermap.org/img/wn/" + data5.list[i].weather[0].icon +".png"  
+//const iconCode = weatherData.current.weather[0].icon;
+//const iconUrl = `https://openweathermap.org/img/w/${iconCode}.png`;
