@@ -24,12 +24,12 @@ To run the application successfully, we need Microsoft Visual Studio as an edito
 To see my homework, please go to : https://thalim-glam.github.io/Myweather_Dashboard/
 
 Here are the sample screenshots
-- Screenshot : Demo of expectation
-![Screenshot of GIF in starter code](./Assets/Demo.gif)
-- Screenshot : Initial clear schedule
-![Screenshot of Empty Schedule](./Assets/Screenshot_1.png)
-- Screenshot: Full Work day Schedule 
-![Screenshot of Full workday schedule](./Assets/Screenshot_2.png)
+- Screenshot : Initial Page
+![Screenshot of Initial page](./images/Screenshot1.png)
+- Screenshot : Current weather
+![Screenshot of Current weather](./images/Screenshot2.png)
+- Screenshot: Five Days weather
+![Screenshot of Five Days weather](./images/Screenshot3.png)
 
 ## Comand line code
 
