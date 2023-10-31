@@ -55,6 +55,7 @@ body {
 .pastCity {
   text-align: left;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .card-group5 {
