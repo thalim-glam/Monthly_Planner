@@ -92,7 +92,7 @@ MIT Lisence
 In my code I had 1 main branch and crated a few featured branch to test my code and update.
 
 
-## Summery
+## Summary
 - This is a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
 - When a city name is searched, the top card will show current weather condition including temperature, humiditi and wind speed.
 - Below the next 5 days forcast of the searched cities. and the box below the search section will show the recently searched places. 
